@@ -10,6 +10,6 @@ return {
       else
         vim.cmd("Trouble lsp toggle")
       end
-    end }
+    end },
   }
 }
