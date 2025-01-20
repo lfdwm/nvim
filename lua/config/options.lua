@@ -186,6 +186,16 @@ end
 vim.api.nvim_set_keymap("v", "<leader>h", ":lua ToggleHighlightRange()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>h", ":lua JumpToNextHighlight()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>H", ":lua JumpToNextHighlight(true)<CR>", { noremap = true, silent = true })
+--
+-- Use tabs in *.gd files
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = {"gdscript"},
+  callback = function()
+    vim.opt_local.expandtab = false
+    vim.opt_local.tabstop = 2
+    vim.opt_local.shiftwidth = 2
+  end
+})
 
 -- Disable animations...
 vim.g.snacks_animate = false
