@@ -20,6 +20,11 @@ require("neo-tree").setup {
   }
 }
 
+-- keep the DAP UI open after a debug session ends by setting listeners to no-ops (LazyVim makes has these calling dapui.close())
+local dap = require("dap")
+dap.listeners.before.event_terminated["dapui_config"] = function() end
+dap.listeners.before.event_exited["dapui_config"]     = function() end
+
 -- Default to openapi 3.0 instead of 3.1
 -- require("lspconfig").yamlls.setup {
 --   settings = {

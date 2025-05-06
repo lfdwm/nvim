@@ -199,3 +199,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- Disable animations...
 vim.g.snacks_animate = false
+
+-- Keep zip enabled
+vim.g.loaded_zip = 0
+vim.g.loaded_zipPlugin = 0
